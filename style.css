@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient( rgb(57, 182, 84) 20%, 0%, lightgray 90%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.header_style{
+    
+    padding: 8px 0px 8px 5px ;
+    border-bottom: 1px solid black;
+    background-color: lightgray;
+}
+#chat_list_wrapper{
+    border: 1px solid black;
+}
+#profile_header img{
+    height: 40px;
+    border-radius: 50%;     
+}
+#notification_activator{
+    font-size: 14px;
+    background-color: lightskyblue;
+}
+#search_bar{
+    background-color: white;
+}
+
+#search_bar{
+    background-color: white;
+}
+
