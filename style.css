@@ -33,9 +33,14 @@ html, body {
 }
 #search_bar{
     background-color: white;
+    border: 1px solid lightgray;
 }
 
-#search_bar{
-    background-color: white;
+#search_bar i{
+    padding: 5px 12px;
+    border-right: 1px solid lightgray;
 }
 
+#search_bar input{
+    border: none;
+}
