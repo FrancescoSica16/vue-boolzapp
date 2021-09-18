@@ -40,10 +40,10 @@ html, body {
     padding-right: 15px;  
 }
 
-
 #chat_list_wrapper{
     border-right: 1px solid rgb(245, 243, 243);
     height: 700px;
+    min-width: 232px;
 }
 #profile_header img,
 #chat img{
@@ -70,5 +70,17 @@ html, body {
 }
 
 #chat{
+    position: relative;
     background-image: url("file:///C:/Users/cicci/Documents/vue-boolzapp/img/mine.jpg");
 }
+
+#chat_footer{
+    height: 50px;
+    width: 100%;
+    color: rgb(121, 121, 121);
+    background-color: blanchedalmond;
+    position: absolute;
+    bottom: 0;  
+}
+
+
