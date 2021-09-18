@@ -14,14 +14,38 @@ html, body {
     height: 100%;
 }
 
-.header_style{
-    
+.header_style{ 
     padding: 8px 0px 8px 5px ;
-    border-bottom: 1px solid black;
-    background-color: lightgray;
+    
+    background-color: rgb(245, 245, 245);
+}
+
+
+.contact_section{
+    height: 70px;
+    font-size: 13px;
+    padding: 6px 15px ;
+    border-top:1px solid rgb(245, 243, 243);
+}
+
+.contact_section:hover{
+    background-color: rgb(245, 245, 245)
+}
+.contact_section.active{
+    background-color: rgb(245, 245, 245)
+}
+
+.contact_section img{
+    height: 50px;
+    border-radius: 50%;
+    padding-right: 15px;  
+}
+.chat_body{
+    background-image: ;
 }
 #chat_list_wrapper{
-    border: 1px solid black;
+    border-right: 1px solid rgb(245, 243, 243);
+    height: 700px;
 }
 #profile_header img{
     height: 40px;
@@ -33,7 +57,7 @@ html, body {
 }
 #search_bar{
     background-color: white;
-    border: 1px solid lightgray;
+    margin: 4px 0px;
 }
 
 #search_bar i{
@@ -43,4 +67,5 @@ html, body {
 
 #search_bar input{
     border: none;
+    width: 80%;
 }
