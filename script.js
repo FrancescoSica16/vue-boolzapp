@@ -96,8 +96,12 @@ var app = new Vue ({
     methods:{
 
         getImg : function(index) {
-          return "img/img/avatar"+ this.contacts[index].avatar +".jpg";
-        }      
+          return "img/avatar"+ this.contacts[index].avatar +".jpg";
+        } 
+        
+        // getName : function (index) {
+        //     return this.contacts[index].name;
+        // }
     },
 
     
