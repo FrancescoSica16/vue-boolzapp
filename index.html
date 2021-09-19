@@ -26,8 +26,8 @@
   
                 <div id="profile_header" class="header_style d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
-                        <img src="img/avatar_io.jpg" alt="foto profilo">
-                        <div>Nuovo Utente</div>
+                        <img src="img/avatar_io.jpg" class="me-2" alt="foto profilo">
+                        <div class="user_name fw-bolder">Nome Utente</div>
                     </div>
                     <div class="d-flex ">
                         <i class="fas fa-circle-notch me-2"></i>
@@ -49,7 +49,9 @@
                     <input type="search" placeholder="Cerca o inizia una nuova chat">
                 </div>    
                 <div id="chat-list">
-                    <div class="contact_section d-flex" v-for="(element, index) in contacts">
+                    <div class="contact_section d-flex" 
+                    v-for="(element, index) in contacts" :class="{'active' : index == selectedContact}"
+                    @click ="selectContact(index)">
                         <img :src="getImg(index)" alt="">
                         <span class="fw-bolder pt-1">{{element.name}}</span>
                     </div>
@@ -59,22 +61,37 @@
             </div>
             <div id="chat" class="col-8">
                 <div id="chat_header" class="header_style">
-                    <img src="img/avatar_io.jpg" alt="foto profilo">
-                    <span>Nuovo Utente</span>
+                    <img src="img/avatar_io.jpg" class="me-2" alt="foto profilo">
+                    <span class="contact_name">{{contacts[selectedContact].name}}</span>
                 </div>
                 <div id="chat_body">
+                    
+                    <div class="box recived">
+                        <div class="text">                           
+                            <div class="message_text">Tututto bene ricevuto</div>
+                            <span class="time"> 10:20 pm</span>
+                        </div>                      
+                    </div>
+                    
+                    <div class="box send">
+                        <div class="text">    
+                            <div class="message_text">Tututto bene inviato</div>
+                            <span class="time"> 10:20 pm</span>
+                        </div>
+                    </div>
+                    
 
                 </div>
 
-                <div id="chat_footer" class="d-flex justify-content-around align-items-center">
+                <div id="chat_footer" class="d-flex justify-content-around align-items-center px-2">
                     <div class="emoticon d-flex">
-                        <i class="far fa-smile"></i>
+                        <i class="far fa-smile fa-1x"></i>
                     </div>
                     <div class="text d-flex w-75">
-                        <input type="text" class="w-100">
+                        <input type="text" placeholder="Scrivi messaggio" class="w-100 fw-6">
                     </div>
                     <div class="rec d-flex">
-                        <i class="fas fa-microphone"></i>
+                        <i class="fas fa-microphone fa-1x"></i>
                     </div>
                 </div>
             </div>

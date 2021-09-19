@@ -97,12 +97,12 @@ var app = new Vue ({
 
         getImg : function(index) {
           return "img/avatar"+ this.contacts[index].avatar +".jpg";
-        } 
+        }, 
         
-        // getName : function (index) {
-        //     return this.contacts[index].name;
-        // }
-    },
+        selectContact : function (elementIndex) {
+            this.selectedContact = elementIndex;
+        }
+    }
 
     
         

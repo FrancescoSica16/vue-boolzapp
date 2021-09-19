@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: linear-gradient( rgb(57, 182, 84) 20%, 0%, lightgray 90%);
+    background-image: linear-gradient( rgb(0, 150, 136) 20%, 0%, rgb(218, 219, 212) 90%);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -16,7 +16,7 @@ html, body {
 
 .header_style{ 
     padding: 8px 0px 8px 5px ;   
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(234, 234, 234);
 }
 
 
@@ -28,16 +28,24 @@ html, body {
 }
 
 .contact_section:hover{
-    background-color: rgb(245, 245, 245)
+    background-color: rgb(233, 235, 235)
 }
 .contact_section.active{
-    background-color: rgb(245, 245, 245)
+    background-color: rgb(233, 235, 235)
 }
 
 .contact_section img{
     height: 50px;
     border-radius: 50%;
     padding-right: 15px;  
+}
+
+.box_recived{
+    background-color: rgb(255, 255, 255) ;
+}
+
+.box_send{
+    background-color: rgb(213, 249, 186) ;
 }
 
 #chat_list_wrapper{
@@ -74,13 +82,46 @@ html, body {
     background-image: url("file:///C:/Users/cicci/Documents/vue-boolzapp/img/mine.jpg");
 }
 
+ #chat_body{  
+    margin: 0 auto;
+    position: relative;
+}
+
+#chat_body .box{
+    width: 45%;
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin: 15px 20px;
+    font-size: 0.9em;
+}
+
+#chat_body .recived{
+    background-color: rgb(255, 255, 255);
+}
+
+#chat_body .send{
+    background-color: rgb(213, 249, 186);
+    position: absolute;
+    right: 0;
+   
+}
+
+#chat_body .time{
+    font-size: 10px;
+    color: rgb(195, 198, 199) ;
+    text-align: end;
+    display: block;
+}
+
 #chat_footer{
-    height: 50px;
+    height: 65px;
     width: 100%;
+    font-size: 20px;
     color: rgb(121, 121, 121);
-    background-color: blanchedalmond;
+    background-color: rgb(243, 238, 234);
     position: absolute;
     bottom: 0;  
 }
+
 
 
