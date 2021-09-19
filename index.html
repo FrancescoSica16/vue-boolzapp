@@ -20,7 +20,7 @@
 <body>
     <div id="app">
     <div class="container pt-5 ">
-        <div class="row gx-0 bg-white">
+        <div class="row gx-0 bg-white flex-nowrap">
 
             <div id="chat_list_wrapper" class="col-4">
   
@@ -29,10 +29,10 @@
                         <img src="img/avatar_io.jpg" class="me-2" alt="foto profilo">
                         <div class="user_name fw-bolder">Nome Utente</div>
                     </div>
-                    <div class="d-flex ">
-                        <i class="fas fa-circle-notch me-2"></i>
-                        <i class="far fa-envelope me-2"></i>
-                        <i class="fas fa-ellipsis-v me-2"></i>
+                    <div class="d-flex my_gray">
+                        <i class="fas fa-circle-notch me-3"></i>
+                        <i class="far fa-envelope me-3"></i>
+                        <i class="fas fa-ellipsis-v me-3"></i>
                     </div>
                 </div>
 
@@ -60,9 +60,20 @@
                 
             </div>
             <div id="chat" class="col-8">
-                <div id="chat_header" class="header_style">
-                    <img src="img/avatar_io.jpg" class="me-2" alt="foto profilo">
-                    <span class="contact_name">{{contacts[selectedContact].name}}</span>
+                <div id="chat_header" class="header_style d-flex justify-content-between align-items-center">
+                    <div id="user-chat" class="d-flex">
+                        <img src="img/avatar_io.jpg" class="me-2" alt="foto profilo">
+                        <span class="contact_name">{{contacts[selectedContact].name}}
+                            <p id="Last_access_chat" class="fw-6 mb-0">Ultimo accesso</p>
+                        </span>       
+                    </div>
+            
+                    <div id="icon-chat" class="d-flex my_gray">
+                        <i class="fas fa-search me-3"></i>
+                        <i class="fas fa-paperclip me-3"></i>
+                        <i class="fas fa-ellipsis-v me-3"></i>
+                    </div>
+
                 </div>
                 <div id="chat_body">
                     
@@ -83,7 +94,7 @@
 
                 </div>
 
-                <div id="chat_footer" class="d-flex justify-content-around align-items-center px-2">
+                <div id="chat_footer" class="d-flex justify-content-around align-items-center px-2 my_gray">
                     <div class="emoticon d-flex">
                         <i class="far fa-smile fa-1x"></i>
                     </div>

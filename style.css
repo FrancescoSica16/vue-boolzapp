@@ -48,6 +48,10 @@ html, body {
     background-color: rgb(213, 249, 186) ;
 }
 
+#content-wrapper{
+    min-width: 748px;
+}
+
 #chat_list_wrapper{
     border-right: 1px solid rgb(245, 243, 243);
     height: 700px;
@@ -58,6 +62,12 @@ html, body {
     height: 40px;
     border-radius: 50%;     
 }
+
+
+#profile_header .user_name{
+    font-size: 14px;
+}
+
 #notification_activator{
     font-size: 14px;
     background-color: lightskyblue;
@@ -78,17 +88,23 @@ html, body {
 }
 
 #chat{
+    min-width: 464px;
     position: relative;
     background-image: url("file:///C:/Users/cicci/Documents/vue-boolzapp/img/mine.jpg");
 }
 
- #chat_body{  
+#chat_header p{
+    color: rgb(121, 121, 121);
+    font-size: 10px;
+}
+
+#chat_body{  
     margin: 0 auto;
-    position: relative;
+    
 }
 
 #chat_body .box{
-    width: 45%;
+    max-width: 45%;
     border-radius: 10px;
     padding: 8px 15px;
     margin: 15px 20px;
@@ -97,6 +113,7 @@ html, body {
 
 #chat_body .recived{
     background-color: rgb(255, 255, 255);
+    max-width: 45%;
 }
 
 #chat_body .send{
@@ -107,7 +124,7 @@ html, body {
 }
 
 #chat_body .time{
-    font-size: 10px;
+    font-size: 11px;
     color: rgb(195, 198, 199) ;
     text-align: end;
     display: block;
@@ -117,11 +134,17 @@ html, body {
     height: 65px;
     width: 100%;
     font-size: 20px;
-    color: rgb(121, 121, 121);
     background-color: rgb(243, 238, 234);
     position: absolute;
     bottom: 0;  
 }
 
+#chat_footer input{
+    font-size: 15px;
+    border-radius: 15px;
+    padding: 3px;
+}
 
-
+.my_gray{
+    color: rgb(121, 121, 121);
+}
