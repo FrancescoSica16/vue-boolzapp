@@ -91,6 +91,7 @@ var app = new Vue ({
         ], // end contact
 
         selectedContact : 0,  
+        fieldSent : "",
     }, //end data
 
     methods:{
@@ -101,7 +102,15 @@ var app = new Vue ({
         
         selectContact : function (elementIndex) {
             this.selectedContact = elementIndex;
-        }
+        },
+        addItem : function (selectedItemIndex,) {
+            if (this.fieldSent.trim("").length > 0) {
+                this.contacts[selectedItemIndex].messages.push(this.fieldSent);
+                // this.fieldSent = "";  
+                
+            }
+        }    
+            
     }
 
     

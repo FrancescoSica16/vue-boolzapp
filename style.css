@@ -89,7 +89,7 @@ html, body {
 
 #chat{
     min-width: 464px;
-    position: relative;
+   
     background-image: url("file:///C:/Users/cicci/Documents/vue-boolzapp/img/mine.jpg");
 }
 
@@ -99,8 +99,7 @@ html, body {
 }
 
 #chat_body{  
-    margin: 0 auto;
-    
+    margin: 0 auto;   
 }
 
 #chat_body .box{
@@ -111,16 +110,15 @@ html, body {
     font-size: 0.9em;
 }
 
-#chat_body .recived{
+#chat_body .received{
     background-color: rgb(255, 255, 255);
     max-width: 45%;
 }
 
-#chat_body .send{
+#chat_body .sent{
     background-color: rgb(213, 249, 186);
-    position: absolute;
-    right: 0;
-   
+    display: flex;
+    justify-content: end;
 }
 
 #chat_body .time{
