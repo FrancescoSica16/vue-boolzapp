@@ -88,8 +88,8 @@ html, body {
 }
 
 #chat{
-    min-width: 464px;
-   
+    position: relative;
+    min-width: 464px; 
     background-image: url("file:///C:/Users/cicci/Documents/vue-boolzapp/img/mine.jpg");
 }
 
@@ -109,14 +109,18 @@ html, body {
     margin: 15px 20px;
     font-size: 0.9em;
 }
-
-#chat_body .received{
+#chat_body .received .box{
     background-color: rgb(255, 255, 255);
-    max-width: 45%;
+}
+#chat_body .sent .box{
+    background-color: rgb(213, 249, 186);
 }
 
-#chat_body .sent{
-    background-color: rgb(213, 249, 186);
+#chat_body .received{   
+    
+}
+
+#chat_body .sent{  
     display: flex;
     justify-content: end;
 }

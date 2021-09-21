@@ -91,6 +91,7 @@ var app = new Vue ({
         ], // end contact
 
         selectedContact : 0,  
+        sendMessageSuccess : false,
         fieldSent : "",
     }, //end data
 
@@ -103,16 +104,38 @@ var app = new Vue ({
         selectContact : function (elementIndex) {
             this.selectedContact = elementIndex;
         },
-        addItem : function (selectedItemIndex,) {
+        sendMessage : function (selectedItemIndex) {
             if (this.fieldSent.trim("").length > 0) {
-                this.contacts[selectedItemIndex].messages.push(this.fieldSent);
-                // this.fieldSent = "";  
-                
-            }
-        }    
-            
-    }
+                let newMessages = {
+                    date: new Date(),
+                    text: this.fieldSent,
+                    status: "sent",
 
-    
+                };
+                this.contacts[selectedItemIndex].messages.push(newMessages);
+                this.fieldSent = "";  
+                this.sendMessageSuccess = true; // per conferma avvenuto invio            
+            }
+        },
+        autoReply : function (selectedItemIndex) {
+            if (this.sendMessageSuccess == true) {
+                let newMessages = {
+                    date: new Date(),
+                    text: "ok",
+                    status: "received",
+                };
+                this.contacts[selectedItemIndex].messages.push(newMessages);
+                this.sendMessageSuccess = false;
+            }            
+        },
         
+        timeOutReply : function () {
+
+            setTimeout( function () {  this.autoReply() }, 1000)
+        }
+     
+
+            
+    }       
 }) // end VUE
+
