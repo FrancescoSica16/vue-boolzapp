@@ -91,8 +91,12 @@ var app = new Vue ({
         ], // end contact
 
         selectedContact : 0,  
-        sendMessageSuccess : false,
+        
         fieldSent : "",
+
+        fieldSearch : "",
+
+    
     }, //end data
 
     methods:{
@@ -107,31 +111,44 @@ var app = new Vue ({
         sendMessage : function (selectedItemIndex) {
             if (this.fieldSent.trim("").length > 0) {
                 let newMessages = {
-                    date: new Date(),
+                    date: new Date().toLocaleString(),
                     text: this.fieldSent,
                     status: "sent",
 
                 };
                 this.contacts[selectedItemIndex].messages.push(newMessages);
                 this.fieldSent = "";  
-                this.sendMessageSuccess = true; // per conferma avvenuto invio            
+                          
+                
+                this.autoReply(selectedItemIndex);
             }
         },
+
         autoReply : function (selectedItemIndex) {
-            if (this.sendMessageSuccess == true) {
+
+            let currentContact = this.contacts[selectedItemIndex];
+
+            setTimeout( function() {
                 let newMessages = {
-                    date: new Date(),
+                    date: new Date().toLocaleString(),
                     text: "ok",
                     status: "received",
                 };
-                this.contacts[selectedItemIndex].messages.push(newMessages);
-                this.sendMessageSuccess = false;
-            }            
+                currentContact.messages.push(newMessages);
+            }, 1000);                  
         },
-        
-        timeOutReply : function () {
 
-            setTimeout( function () {  this.autoReply() }, 1000)
+        searchContact : function () {
+            
+            for (let i = 0; i < this.contacts.length; i++) {
+                if ((this.contacts[i].name).toLowerCase().startsWith(this.fieldSearch.toLowerCase())) {
+                    this.contacts[i].visible = true;
+                   
+                } else {
+                    this.contacts[i].visible = false;                  
+                }     
+            }
+
         }
      
 

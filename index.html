@@ -46,10 +46,10 @@
 
                 <div id="search_bar" class="py-1">
                     <i class="fas fa-search"></i>
-                    <input type="search" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup.enter="searchContact()" v-model="fieldSearch" type="search" placeholder="Cerca o inizia una nuova chat">
                 </div>    
                 <div id="chat-list">
-                    <div class="contact_section d-flex" 
+                    <div class="contact_section d-flex" v-if="element.visible == true"
                     v-for="(element, index) in contacts" :class="{'active' : index == selectedContact}"
                     @click ="selectContact(index)">
                         <img :src="getImg(index)" alt="">
@@ -84,7 +84,7 @@
                                 <div class="message_text">
                                     {{message.text}}
                                 </div>
-                                <span class="time"> 10:20 pm</span>
+                                <span class="time pt-1">{{message.date}}</span>
                             </div>               
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                         <i class="far fa-smile fa-1x"></i>
                     </div>
                     <div class="text d-flex w-75">
-                        <input @keyup.enter="timeOutReply()" v-model="fieldSent" @keydown.enter="sendMessage(selectedContact)" type="text" placeholder="Scrivi messaggio" class="w-100 fw-6">
+                        <input v-model="fieldSent" @keydown.enter="sendMessage(selectedContact)" type="text" placeholder="Scrivi messaggio" class="w-100 fw-6">
                     </div>
                     
                     <div class="rec d-flex">

@@ -14,6 +14,10 @@ html, body {
     height: 100%;
 }
 
+.row{
+    height: 750px;
+}
+
 .header_style{ 
     padding: 8px 0px 8px 5px ;   
     background-color: rgb(234, 234, 234);
@@ -88,6 +92,7 @@ html, body {
 }
 
 #chat{
+    overflow-y: scroll;
     position: relative;
     min-width: 464px; 
     background-image: url("file:///C:/Users/cicci/Documents/vue-boolzapp/img/mine.jpg");
@@ -104,6 +109,7 @@ html, body {
 
 #chat_body .box{
     max-width: 45%;
+    min-width: 30%;
     border-radius: 10px;
     padding: 8px 15px;
     margin: 15px 20px;
@@ -117,7 +123,8 @@ html, body {
 }
 
 #chat_body .received{   
-    
+    display: flex;
+    justify-content: start;
 }
 
 #chat_body .sent{  
@@ -126,7 +133,7 @@ html, body {
 }
 
 #chat_body .time{
-    font-size: 11px;
+    font-size: 9px;
     color: rgb(195, 198, 199) ;
     text-align: end;
     display: block;
